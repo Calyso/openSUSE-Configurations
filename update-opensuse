@@ -8,4 +8,4 @@ sudo zypper ref
 sudo zypper up -y
 
 echo "Update Snapcraft Software"
-
+sudo snap refresh
