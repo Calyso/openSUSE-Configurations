@@ -25,4 +25,5 @@ git config --global user.name "Calyso"
 
 echo "Install Base Software from Snap"
 sudo snap install slack --classic
-sudo snap install spotify discord atom
+sudo snap install spotify discord 
+sudo snap install atom --classic
