@@ -6,12 +6,18 @@ cd ~ && curl -Lk# https://github.com/calyso/dotfiles/tarball/master | tar --stri
 echo "Add snapd Repo"
 sudo zypper addrepo --refresh http://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_42.3/ snappy
 
-echo "Refresh Repos and Update System"
+echo "Trust Google Linux Signing Key"
+wget https://dl.google.com/linux/linux_signing_key.pub                   
+sudo rpm --import linux_signing_key.pub
+rm linux_signing_key.pub
+
+echo "Refresh Repos and Update Base Packages"
 sudo zypper ref
 sudo zypper up
 
 echo "Install Base Software"
-sudo zypper in -y snapd git 
+sudo zypper ar http://dl.google.com/linux/chrome/rpm/stable/x86_64 google
+sudo zypper in -y snapd git remmina google-chrome-stable
 
 echo "Configure git"
 git config --global user.email "mjg1675@gmail.com"
@@ -19,4 +25,4 @@ git config --global user.name "Calyso"
 
 echo "Install Base Software from Snap"
 sudo snap install slack --classic
-sudo snap install spotify
+sudo snap install spotify discord atom
