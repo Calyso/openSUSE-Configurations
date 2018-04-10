@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "Update Dotfiles"
+cd ~ && curl -Lk# https://github.com/calyso/dotfiles/tarball/master | tar --strip-components 1 -xz && source .bash_profile
+
+echo "Update OS/Software via Zypper"
+sudo zypper ref
+sudo zypper up -y
+
+echo "Update Snapcraft Software"
+
