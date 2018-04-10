@@ -1,0 +1,15 @@
+sudo zypper addrepo --refresh http://download.opensuse.org/repositories/system:/snappy/openSUSE_Leap_42.3/ snappy
+
+sudo zypper ref
+sudo zypper up
+sudo zypper in -y snapd git 
+
+git config --global user.email "mjg1675@gmail.com"
+git config --global user.name "Calyso"
+
+sudo snap install slack --classic
+sudo snap install spotify
+
+cd ~ && curl -Lk# https://github.com/calyso/dotfiles/tarball/master | tar --strip-components 1 -xz && source .bash_profile
+
+
