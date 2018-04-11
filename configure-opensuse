@@ -22,6 +22,16 @@ sudo zypper in -y snapd git remmina google-chrome-stable
 echo "Enable snapd Service"
 sudo systemctl enable --now snapd.socket
 
+echo "Enable xrdp Service"
+echo "Do you want to enable xrdp?"
+read xrdp
+if (xrdp == "y")
+	sudo systemctl start xrdp
+	sudo systemctl enable xrdp
+else
+	echo "Not enabling xrdp"
+fi 
+
 echo "Configure git"
 git config --global user.email "mjg1675@gmail.com"
 git config --global user.name "Calyso"
